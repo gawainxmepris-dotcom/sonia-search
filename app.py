@@ -205,9 +205,8 @@ HTML = """<!DOCTYPE html>
 
 @app.route("/", methods=["GET"])
 def home():
-    q = request.args.get("q", "").strip()
-    results = search_engine(q) if q else None
-    return render_template_string(HTML, q=q, results=results)
+    return render_template("index.html")
+
 
 # ================================
 # LANCEMENT SERVEUR
