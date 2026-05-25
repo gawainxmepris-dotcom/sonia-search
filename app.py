@@ -117,7 +117,87 @@ def search_engine(query):
 # HTML
 # ================================
 
-HTML = """TON HTML ICI (je ne le recopie pas pour éviter un message trop long)"""
+HTML = """<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moteur de recherche SONIA</title>
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #FFFFFF;
+      font-family: Arial, sans-serif;
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #FFFFFF;
+    }
+
+    .logo {
+      width: 400px;
+      margin-bottom: 30px;
+      background-color: #FFFFFF;
+      filter: none;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      width: 60%;
+      max-width: 600px;
+      background-color: #FFFFFF;
+      border: 1px solid #DDD;
+      border-radius: 30px;
+      padding: 10px 20px;
+      box-shadow: none;
+    }
+
+    .search-bar input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      background-color: #FFFFFF;
+    }
+
+    .search-bar button {
+      background-color: #6C63FF;
+      color: #FFFFFF;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-bar button:hover {
+      background-color: #5848E5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="search-container">
+
+    <img src="/static/sonia.png" alt="Logo SONIA" class="logo">
+
+    <form action="/search" method="GET" class="search-bar">
+      <input type="text" name="q" placeholder="Rechercher...">
+      <button type="submit">Recherche</button>
+    </form>
+
+  </div>
+</body>
+</html>
+"""
 
 # ================================
 # ROUTES
