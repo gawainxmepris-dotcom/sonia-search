@@ -1,8 +1,21 @@
-from flask import Flask, render_template, request, redirect, render_template_string
-import os, threading, time, re, requests
-from collections import defaultdict, deque
-from urllib.parse import urljoin, urlparse
-from bs4 import BeautifulSoup
+from flask import Flask, request, redirect, render_template
+
+app = Flask(__name__)
+
+@app.route("/", methods=["GET"])
+def home():
+    q = request.args.get("q", "").strip()
+
+    # Si l'utilisateur tape quelque chose → redirection Google
+    if q:
+        return redirect(f"https://www.google.com/search?q={q}")
+
+    # Sinon on affiche juste la page SONIA
+    return render_template("index.html")
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
+
 
 # ================================
 # FLASK APP
